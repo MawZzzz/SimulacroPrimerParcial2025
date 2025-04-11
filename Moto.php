@@ -34,17 +34,46 @@ class Moto {
     public function getActiva($active){
         return $this ->activa;
     }
+    //setters
+    public function setCodigo($newCode){
+        $this ->codigo =$newCode;
+    }
+    public function setCosto($newCost){
+        $this ->costo =$newCost;
+    }
+    public function setAnioFab($newYearF){
+        $this ->anioFab = $newYearF;
+    }
+    public function setDesc($newDesc){
+        $this ->descripcion =$newDesc;
+    }
+    public function setPia($newPai){
+        $this ->pia =$newPai;
+    }
+    public function setActiva($newActive){
+        $this ->activa =$newActive;
+    }
 
     public function __tostring(){
         return "codigo: ".$this->getCodigo()."\n"."costo: ".$this->getCosto()."\n"."Año de Fabricacion: ".$this->getAnioFab()."\n"."descripcion: ".$this->getDesc()."\n"."P.I.A(Porcentaje Incremento Anual): ".$this->getPia()."\n"."Activa: ".$this->getActiva()."\n";
     }
     
 
-    public function darPrecioVenta($active){
-        if($this ->activa==false){
-            $venta=-1;
+    public function darPrecioVenta(){
+        $venta=-1;
+        $dispo=$this->getActiva();
+        $costoMoto=$this->getCosto();
+        $anioFabricacion=$this->getAnioFab();
+        $porIncAn=$this->getPia();
+        $anioAct=date("Y");
+        $anioTrans=$anioAct-$anioFabricacion;
+
+
+        if($dispo){
+            $venta= ($costoMoto+$costoMoto*($anioTrans * $porIncAn));
+
         }else{
-            $venta=$this->activa. $this->costo *($this->getAnioFab()*$this ->getPia());
+            $venta;
         }
         return $venta;
     }
