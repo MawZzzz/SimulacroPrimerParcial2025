@@ -1,5 +1,5 @@
 <?php
-include_once "Moto.php";
+include_once 'Moto.php';
 class venta{
     //atributos 
     private $numero;
@@ -66,8 +66,15 @@ class venta{
             $coleccion[]=$objMoto;//almaceno
             $this-> setRefColecM($coleccion);
             $costoMoto=$objMoto->darPrecioVenta();
+            $precio=$this->getPrecioFinal();
+            $this->setPrecioFinal($precio+ $costoMoto);
+            $retorno=true;
+
+
 
         }
+        return $retorno;
+    
     }
 }
 ?>
