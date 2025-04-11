@@ -60,6 +60,7 @@ class Moto {
     
 
     public function darPrecioVenta(){
+        //dejo el valor de venta como si no estuviera disponible
         $venta=-1;
         $dispo=$this->getActiva();
         $costoMoto=$this->getCosto();
