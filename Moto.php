@@ -38,6 +38,16 @@ class Moto {
     public function __tostring(){
         return "codigo: ".$this->getCodigo()."\n"."costo: ".$this->getCosto()."\n"."Año de Fabricacion: ".$this->getAnioFab()."\n"."descripcion: ".$this->getDesc()."\n"."P.I.A(Porcentaje Incremento Anual): ".$this->getPia()."\n"."Activa: ".$this->getActiva()."\n";
     }
+    
+
+    public function darPrecioVenta($active){
+        if($this ->activa==false){
+            $venta=-1;
+        }else{
+            $venta=$this->activa. $this->costo *($this->getAnioFab()*$this ->getPia());
+        }
+        return $venta;
+    }
 
 }
 
