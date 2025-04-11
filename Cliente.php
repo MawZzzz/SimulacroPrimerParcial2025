@@ -8,54 +8,60 @@ class Cliente {
 
 
 
-    public function __construct($name ,$surname ,$typeDoc ,$numberDoc ,$state){
-        $this ->nombre = $name;
-        $this ->apellido = $surname;
-        $this ->tipoDoc = $typeDoc;
-        $this ->numDoc = $numberDoc;
-        $this ->estado = $state;
+    public function __construct($nameClient ,$surnameClient ,$typeDocClient ,$numberDocClient ,$stateClient){
+        $this ->nombre = $nameClient;
+        $this ->apellido = $surnameClient;
+        $this ->tipoDoc = $typeDocClient;
+        $this ->estado = $stateClient;
     }
 
-    public function setNombre($name){
-        $this ->nombre =$name;
-    }
-    public function setApellido($surname){
-        $this -> apellido = $surname;
+ 
     
-    }
-    public function setTipoDoc($typeDoc){
-        $this -> tipoDoc = $typeDoc;
-    
-    }
-    public function setNumDoc($numberDoc){
-        $this -> numDoc =$numberDoc;
-    }
-    public function setEstado($state){
-        $this ->estado = $state;
-    }
-    
-    public function getNombre($name){
+    public function getNombre($nameClient){
         return $this->nombre;
 
     }
-    public function getApellido($surname){
+    public function getApellido($surnameClient){
         return $this -> apellido;
 
     }
-    public function getTipoDoc($typeDoc){
+    public function getTipoDoc($typeDocClient){
         return $this->tipoDoc;
     }
-    public function getNumDoc($numberDoc){
+    public function getNumDoc($numberDocClient){
         return $this ->numDoc;
     }
-    public function getEstado($state){
+    public function getEstado($stateClient){
 
         return $this->estado;
     }
+    public function setNombre($newName){
+        $this ->nombre =$newName;
+    }
+    public function setApellido($newSurname){
+        $this -> apellido = $newSurname;
+    
+    }
+    public function setTipoDoc($newTypeDoc){
+        $this -> tipoDoc = $newTypeDoc;
+    
+    }
+    public function setNumDoc($newNumberDoc){
+        $this -> numDoc =$newNumberDoc;
+    }
+    public function setEstado($newState){
+        $this ->estado = $newState;
+    }
     public function __tostring(){
-        return "Nombre: ".$this -> getNombre()."\n"."Apellido: ".$this -> getApellido()."\n"."Tipo de Documento: ".$this-> getTipoDoc()."\n"."Numero de Documento: ".$this-> getNumDoc()."\n"."Estado: ".$this-> getEstado()."\n";
+        $cadena= 
+        "Nombre: ".$this -> getNombre()."\n".
+        "Apellido: ".$this -> getApellido()."\n".
+        "Tipo de Documento: ".$this-> getTipoDoc()."\n".
+        "Numero de Documento: ".$this-> getNumDoc()."\n".
+        "Estado del Cliente: ".$this-> getEstado()."\n";
         
 
+        return $cadena;
 
     }
 
