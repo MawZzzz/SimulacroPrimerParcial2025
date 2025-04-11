@@ -8,9 +8,37 @@ class Moto {
     private $activa;
 
 
-    public function __construct($code ,$cost ,$yearF ,$description ,$pai){
-        
+    public function __construct($code ,$cost ,$yearF ,$description ,$pai ,$active){
+        $this ->codigo =$code;
+        $this -> costo =$cost;
+        $this ->anioFab =$yearF;
+        $this ->desc =$description;
+        $this ->pia =$pai;
+        $this ->activa =$active;
     }
+    public function getCodigo($code){
+        return $this ->codigo;
+    }
+    public function getCosto($cost){
+        return $this ->costo;
+    }
+    public function getAnioFab($yearF){
+        return $this ->anioFab;
+    }
+    public function getDesc($description){
+        return $this->desc;
+    }
+    public function getPia($pai){
+        return $this ->pia;
+    }
+    public function getActiva($active){
+        return $this ->activa;
+    }
+
+    public function __tostring(){
+        return ;
+    }
+
 }
 
 
