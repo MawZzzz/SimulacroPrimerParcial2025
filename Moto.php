@@ -36,7 +36,7 @@ class Moto {
     }
 
     public function __tostring(){
-        return ;
+        return "codigo: ".$this->getCodigo()."\n"."costo: ".$this->getCosto()."\n"."Año de Fabricacion: ".$this->getAnioFab()."\n"."descripcion: ".$this->getDesc()."\n"."P.I.A(Porcentaje Incremento Anual): ".$this->getPia()."\n"."Activa: ".$this->getActiva()."\n";
     }
 
 }
